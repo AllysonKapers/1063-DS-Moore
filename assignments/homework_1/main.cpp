@@ -106,7 +106,7 @@ void printClassList(Student *classList, int classSize)
              << classList[i].lname << " ";
          //prints correct number of grades for each student   
         for(int j = 1; j - 1 < classList[i].grades[0] && j <= 10; j++){
-            cout << classList[i].grades[j]; 
+            cout << classList[i].grades[j] << " "; 
         }
         cout << endl;
 
