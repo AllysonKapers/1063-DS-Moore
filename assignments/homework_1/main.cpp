@@ -67,7 +67,13 @@ int loadClassList(Student *classList, string fileName)
     while (!fin.eof())
     {
         // Read one line in the file into one struct at array location `i`
-        fin >> classList[i].fname >> classList[i].lname >> classList[i].grades[0] >> classList[i].grades[1];
+        fin >> classList[i].fname >> classList[i].lname >> classList[i].grades[0];
+        
+        //collects correct number of grades per student
+        for (int j = 1; j - 1 < classList[i].grades[0] && j <= 10; j++)
+		{
+			fin >> classList[i].grades[j];
+		}
 
         // increment `i`
         i++;
@@ -97,9 +103,13 @@ void printClassList(Student *classList, int classSize)
     for (int i = 0; i < classSize; i++)
     {
         cout << classList[i].fname << " "
-             << classList[i].lname << " "
-             << classList[i].grades[0] << " "
-             << classList[i].grades[1] << endl;
+             << classList[i].lname << " ";
+         //prints correct number of grades for each student   
+        for(int j = 1; j - 1 < classList[i].grades[0] && j <= 10; j++){
+            cout << classList[i].grades[j]; 
+        }
+        cout << endl;
+
     }
 }
 
@@ -137,7 +147,7 @@ int main()
 
     // Call the loadClassList function to open a file and load an array
     // of `Student` structs.
-    classSize = loadClassList(classList, "simple_input_data.txt");
+    classSize = loadClassList(classList, "input_data.txt");
 
     // Function returned how many lines (students) read in, lets print it.
     cout << "Class Size: " << classSize << endl;
@@ -147,4 +157,4 @@ int main()
 
 
     return 0;
-} 
+}  
