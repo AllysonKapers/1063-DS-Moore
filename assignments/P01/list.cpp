@@ -106,6 +106,7 @@ public:
           g = 1; //because string was found
 
         }
+        Temp = Temp->Next;
       }
       if (g == 0){
         return false;
