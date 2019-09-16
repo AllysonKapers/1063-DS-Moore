@@ -1,3 +1,7 @@
+//Allyson Moore
+//P01
+//CMPS1063
+//September 17, 2019
 #include <iostream>
 #include <fstream>
 
