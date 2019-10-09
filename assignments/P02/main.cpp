@@ -5,6 +5,7 @@
  * Date: 10-8-19
  * Description:
  *    Main driver of an Array based implementation of a stack.
+ *    uses a struct to load data and multiple functions used to resize, pop, push, print, and check if full/empty   
  */
 
 #include <iostream>
