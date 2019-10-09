@@ -245,7 +245,7 @@ int main() {
   //printing student info to outfile here because it's not relevant to the print function in Stack
   outfile << "Allyson Moore \n";
   outfile << "CMPS1063 - Project 2 \n";
-  outfile << "October 8, 2019";
+  outfile << "October 8, 2019 \n\n";
   //uses print function from Stack
   S1.Print(outfile);
 };
