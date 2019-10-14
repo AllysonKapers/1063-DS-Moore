@@ -27,6 +27,12 @@ struct Animal {
     }
 
     // Should add an overloaded constructor
+    Animal(string n, double w, double s){
+        name = n;
+        weight = w;
+        scary = s;
+        
+    }
 
 };
 
