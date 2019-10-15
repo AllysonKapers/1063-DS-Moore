@@ -17,11 +17,12 @@ int main() {
   ListQueue LQ;                 // Queue instance 
 
   
-  for(int i=0;i<10;i++){        // Load random values onto the queue
-    int r = rand()%100;
-    cout<<r<<" ";
-    LQ.Push(r);
-  }
+  // While still animals in the file
+    while (!fin.eof()) {
+        a = new Animal();                         // allocate memory for an animal
+        fin >> a->name >> a->weight >> a->scary;  // load animal with file data
+        LQ.Push(a);                               // push animal onto the stack
+    }
 
   cout<<endl;                     // ummmm 
 
