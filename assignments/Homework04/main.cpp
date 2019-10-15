@@ -1,11 +1,5 @@
-/**
- * Lecture 08
- * 
- * List based queue 
- * 
- * Author: Terry Griffin
- * Date: Oct 4th ish 2019
- */
+//Allyson Moore
+//
 #include <iostream>
 #include <fstream>
 #include "ListQueue.hpp"
@@ -15,8 +9,12 @@ using namespace std;
 
 int main() {
   ListQueue LQ;                 // Queue instance 
-
   
+  //opens animal file
+  ifstream fin;
+  fin.open("animals.txt");
+
+  // Loads file into Animal type
   // While still animals in the file
     while (!fin.eof()) {
         a = new Animal();                         // allocate memory for an animal
