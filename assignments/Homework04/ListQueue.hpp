@@ -7,23 +7,50 @@
  */
 #include <iostream>
 
+
 using namespace std;
 
+//creates animal type for use in Queue, with overloaded constructor from HW3
+struct Animal {
+    string name;
+    double weight;
+    double scary;
 
-struct Node{          // Typical node setup for a list. 
-  int data;           // simple integer data.
-  Node* Next;
+    // Default constructor
+    Animal() {
+        name = "";
+        weight = 0.0;
+        scary = 99.0;
+    }
 
-  Node(){             // default constructor
-    data = -1;
-    Next = NULL;
-  }
+    // Added overloaded constructor
+    Animal(string n, double w, double s){
+        name = n;
+        weight = w;
+        scary = s;
+        
+    }
 
-  Node(int val){      // overloaded constructor
-    data = val;
-    Next = NULL;
-  }
 };
+
+
+
+//separate node type
+struct Node {
+    Animal *A;
+    Node *Next;
+
+    // Needs a default constructor
+
+    Node(Animal *a) {
+        A = a;
+        Next = NULL;
+    }
+};
+
+
+
+
 
 /**
  * List Queue
@@ -37,7 +64,7 @@ private:
   Node* Rear;             // rear of the queue (where we add to)
 public:
   ListQueue();            // construct
-  void Push(int);         // add integers to rear
+  void Push(Animal);         // add animal to rear
   int Pop();              // remove from front
   void Print();           // print for debugging
   bool Empty();           // is queue empty (can't remove from empty queue)
@@ -64,11 +91,11 @@ ListQueue::ListQueue(){
  * Purpose:
  *     Adds item to rear of queue
  * Params:
- *     int val : item to be added
+ *     Animal val : animal to be added
  * Returns:
  *     void
  */
-void ListQueue::Push(int val){
+void ListQueue::Push(Animal val){
   Node* temp = new Node(val);     // allocate new memory
 
   if(Front == NULL){              // if list is empty
