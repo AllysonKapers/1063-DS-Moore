@@ -18,7 +18,7 @@ int main(){
     ifstream infile;
     infile.open("input.txt");
     ofstream outfile;
-    outfile.open("output.num");
+    outfile.open("output.txt");
 
 
     
@@ -52,7 +52,10 @@ int main(){
             Sol->print();
         }
         problems--; 
+        A->EmptyList;
+        B->EmptyList;
+        Sol->EmptyList;
 
     } 
-    return 0;
+
 }
