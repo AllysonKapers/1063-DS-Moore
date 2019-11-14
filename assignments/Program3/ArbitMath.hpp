@@ -56,7 +56,7 @@ class ArbitMath{
         Node* Temp = Head;
 
         while(Temp){
-            cout<<Temp->data;
+            outfile<<Temp->data;
             Temp = Temp->Next;
         }
         cout<<endl;
@@ -164,7 +164,7 @@ class ArbitMath{
             int carry = 0, p;
             ArbitMath* Val = new ArbitMath(*A);
             ArbitMath* Product = new ArbitMath();
-            while(Temp->Tail != NULL){
+            while(Val->Tail != NULL){
                 //multipies all of list A by each node of list B and uses the add function to 
                 //move through nodes in B and update the Product
                 p = ((Val->Tail->data) * (B->Tail->data) + carry) % 10;
@@ -172,7 +172,7 @@ class ArbitMath{
                 //frontserts P to Product
                 Product->FrontSert(p);
                 //updates Val Tail
-                Val->Tail = Temp->Tail->Prev;
+                Val->Tail = Val->Tail->Prev;
             }
             //frontserts carry if there is one
             if(carry != 0){
