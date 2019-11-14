@@ -31,9 +31,11 @@ class ArbitMath{
             Head = Temp;
             Tail = Temp;
         }
+        else{
         Tail->Next = Temp;
         Temp->Prev = Tail;
         Tail = Temp;
+        }
     }
     //inserts in front
     void FrontSert(int d){
@@ -42,9 +44,11 @@ class ArbitMath{
             Head = Temp;
             Tail = Temp;
         }
+        else{
         Head->Prev = Temp;
         Temp->Next = Head;
         Head = Temp;
+        }
     }
     //prints lists
     void print(){
@@ -55,6 +59,14 @@ class ArbitMath{
             Temp = Temp->Next;
         }
         cout<<endl;
+    }
+
+    void EmptyList(){
+        while(Head != NULL){
+            Node* Temp = Head;
+            Head = Head->Next;
+            delete Temp;
+        }
     }
     //adds strings
     void Add(ArbitMath* A, ArbitMath* B){
