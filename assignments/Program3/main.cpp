@@ -7,14 +7,15 @@
 using namespace std;
 
 int main(){
+    //variables to hold input file information
     int problems;
     string one, two;
     char operation;
-
+    //assigns ArbitMath pointers
     ArbitMath* A = new ArbitMath();
     ArbitMath* B = new ArbitMath();
     ArbitMath* Sol = new ArbitMath();
-
+    //opens file for reading/printing
     ifstream infile;
     infile.open("input.txt");
     ofstream outfile;
@@ -25,19 +26,21 @@ int main(){
     infile >> problems;
     outfile << problems;
 
-    while(problems > 0)
+    for(int c = 0; c < problems; c++)
     {   int num;
+        //reads a new problems into variables each loop iteration
         infile >> operation >> one >> two;
+        //creates list for string one
         for(int i = 0; i < one.length(); i++){
             num = one.at(i)-48;
-            cout << num;
             A->EndSert(num);
         }
+        //creates list for string two
         for(int i = 0; i < two.length(); i++){
             num = two[i]-48;
-            cout << num;
             B->EndSert(num);
         }
+        //tests operation to determine which function to pass A and B to
         if(operation == '+'){
             Sol->Add(A, B);
             Sol->print();
@@ -51,7 +54,7 @@ int main(){
             Sol->Mul(A, B);
             Sol->print();
         }
-        problems--; 
+        //resets lists
         A->EmptyList;
         B->EmptyList;
         Sol->EmptyList;
