@@ -219,7 +219,7 @@ int main(){
     ifstream infile;
     infile.open("input.txt");
     ofstream outfile;
-    outfile.open("output.txt");
+    outfile.open("output.num");
 
     infile >> problems;
     for(int count = 0; count < problems; count++){
