@@ -120,6 +120,7 @@ public:
       }
 
       Tail = Min;
+     //changes MinPrev to Min
       if(Min == Start){
         Start = Start->Next;
       }else{
